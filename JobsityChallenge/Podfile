@@ -22,11 +22,21 @@ target 'Core' do
   core_pods
 end
 
+# Service module
+def service_pods
+end
+
+target 'Service' do
+  project 'Service/Service.project'
+  service_pods
+end
+
 # Application
 def application_pods
   # pod 'RxSwift'
   home_pods
   core_pods
+  service_pods
 end
 
 target 'JobsityChallenge' do
