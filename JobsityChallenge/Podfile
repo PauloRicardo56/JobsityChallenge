@@ -13,10 +13,20 @@ target 'Home' do
   home_pods
 end
 
+# Core module
+def core_pods
+end
+
+target 'Core' do
+  project 'Core/Core.project'
+  core_pods
+end
+
 # Application
 def application_pods
   # pod 'RxSwift'
   home_pods
+  core_pods
 end
 
 target 'JobsityChallenge' do
