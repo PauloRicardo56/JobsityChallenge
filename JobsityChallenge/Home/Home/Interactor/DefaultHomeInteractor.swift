@@ -7,16 +7,16 @@
 
 import Service
 
-public final class DefaultHomeInteractor: HomeInteractor {
+final class DefaultHomeInteractor: HomeInteractor {
 
     private let repository: NetworkRepository?
     private let endpoint = "api.tvmaze.com"
 
-    public init(repository: NetworkRepository = DefaultNetworkRepository()) {
+    init(repository: NetworkRepository = DefaultNetworkRepository()) {
         self.repository = repository
     }
 
-    public func fetchShows() {
+    func fetchShows() {
         let path = "/shows"
 
         repository?.request(endpoint: endpoint, path: path, resultObject: [Show].self, completion: { result in

@@ -8,7 +8,7 @@
 import UIKit
 import Service
 
-public class HomeViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     private let interactor: HomeInteractor?
 
@@ -16,7 +16,7 @@ public class HomeViewController: UIViewController {
         .init()
     }()
 
-    public init(interactor: HomeInteractor) {
+    init(interactor: HomeInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,12 +25,12 @@ public class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func loadView() {
+    override func loadView() {
         super.loadView()
         view = homeView
     }
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         interactor?.fetchShows()
