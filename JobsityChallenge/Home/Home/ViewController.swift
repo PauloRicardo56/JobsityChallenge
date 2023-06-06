@@ -1,17 +1,16 @@
 //
 //  ViewController.swift
-//  JobsityChallenge
+//  Home
 //
 //  Created by Paulo Ricardo de Araujo Vieira on 06/06/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+public class ViewController: UIViewController {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
+        view.backgroundColor = .green
     }
 }

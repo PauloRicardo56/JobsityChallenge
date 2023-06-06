@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+platform :ios, '15.0'
+
+workspace 'JobsityChallenge.xcworkspace'
+
+# Home module
+def home_pods
+end
+
+target 'Home' do
+  project 'Home/Home.project'
+  home_pods
+end
+
+# Application
+def application_pods
+  # pod 'RxSwift'
+  home_pods
+end
+
+target 'JobsityChallenge' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  application_pods
+end

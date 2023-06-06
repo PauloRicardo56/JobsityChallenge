@@ -3,25 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		40F667A32A2FA1340037CCCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667A22A2FA1340037CCCD /* AppDelegate.swift */; };
 		40F667A52A2FA1340037CCCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667A42A2FA1340037CCCD /* SceneDelegate.swift */; };
-		40F667A72A2FA1340037CCCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667A62A2FA1340037CCCD /* ViewController.swift */; };
 		40F667AC2A2FA1350037CCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F667AB2A2FA1350037CCCD /* Assets.xcassets */; };
 		40F667AF2A2FA1350037CCCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F667AD2A2FA1350037CCCD /* LaunchScreen.storyboard */; };
+		40F667F72A2FB03C0037CCCD /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F667F62A2FB03C0037CCCD /* Home.framework */; };
+		9C520FD5621E11B0442D5185 /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F0F3EDDC323862BE3EA371 /* Pods_JobsityChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25D2705855FB02997F064500 /* Pods-JobsityChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		37F0F3EDDC323862BE3EA371 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F6679F2A2FA1340037CCCD /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F667A22A2FA1340037CCCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40F667A42A2FA1340037CCCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40F667A62A2FA1340037CCCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40F667AB2A2FA1350037CCCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40F667AE2A2FA1350037CCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40F667B02A2FA1350037CCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40F667F62A2FB03C0037CCCD /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56A90BD9C39C0F2140821CF /* Pods-JobsityChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F667F72A2FB03C0037CCCD /* Home.framework in Frameworks */,
+				9C520FD5621E11B0442D5185 /* Pods_JobsityChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A5B9FF1C1D55C795CD415D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F56A90BD9C39C0F2140821CF /* Pods-JobsityChallenge.debug.xcconfig */,
+				25D2705855FB02997F064500 /* Pods-JobsityChallenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		40F667962A2FA1340037CCCD = {
 			isa = PBXGroup;
 			children = (
 				40F667A12A2FA1340037CCCD /* JobsityChallenge */,
 				40F667A02A2FA1340037CCCD /* Products */,
+				0A5B9FF1C1D55C795CD415D2 /* Pods */,
+				8E9AE58AF9E62EFFD4B72029 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +73,20 @@
 			children = (
 				40F667A22A2FA1340037CCCD /* AppDelegate.swift */,
 				40F667A42A2FA1340037CCCD /* SceneDelegate.swift */,
-				40F667A62A2FA1340037CCCD /* ViewController.swift */,
 				40F667AB2A2FA1350037CCCD /* Assets.xcassets */,
 				40F667AD2A2FA1350037CCCD /* LaunchScreen.storyboard */,
 				40F667B02A2FA1350037CCCD /* Info.plist */,
 			);
 			path = JobsityChallenge;
+			sourceTree = "<group>";
+		};
+		8E9AE58AF9E62EFFD4B72029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40F667F62A2FB03C0037CCCD /* Home.framework */,
+				37F0F3EDDC323862BE3EA371 /* Pods_JobsityChallenge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +96,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40F667C92A2FA1360037CCCD /* Build configuration list for PBXNativeTarget "JobsityChallenge" */;
 			buildPhases = (
+				F5CDB95ADE7EDD0A7BE1DF8D /* [CP] Check Pods Manifest.lock */,
 				40F6679B2A2FA1340037CCCD /* Sources */,
 				40F6679C2A2FA1340037CCCD /* Frameworks */,
 				40F6679D2A2FA1340037CCCD /* Resources */,
@@ -100,7 +126,7 @@
 				};
 			};
 			buildConfigurationList = 40F6679A2A2FA1340037CCCD /* Build configuration list for PBXProject "JobsityChallenge" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -129,12 +155,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F5CDB95ADE7EDD0A7BE1DF8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsityChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		40F6679B2A2FA1340037CCCD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40F667A72A2FA1340037CCCD /* ViewController.swift in Sources */,
 				40F667A32A2FA1340037CCCD /* AppDelegate.swift in Sources */,
 				40F667A52A2FA1340037CCCD /* SceneDelegate.swift in Sources */,
 			);
@@ -270,6 +320,7 @@
 		};
 		40F667CA2A2FA1360037CCCD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F56A90BD9C39C0F2140821CF /* Pods-JobsityChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -300,6 +351,7 @@
 		};
 		40F667CB2A2FA1360037CCCD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D2705855FB02997F064500 /* Pods-JobsityChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
