@@ -10,11 +10,20 @@ import Service
 
 public class HomeViewController: UIViewController {
 
-    var show: Show?
+    private let interactor: HomeInteractor?
 
     let homeView: HomeView = {
         .init()
     }()
+
+    public init(interactor: HomeInteractor) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     public override func loadView() {
         super.loadView()
@@ -24,14 +33,6 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        let repository = DefaultNetworkRepository()
-        repository.request(endpoint: "api.tvmaze.com", path: "/shows", httpMethod: "GET", resultObject: Show.self) { result in
-            switch result {
-            case .success(let show):
-                self.show = show
-            default:
-                break
-            }
-        }
+        interactor?.fetchShows()
     }
 }

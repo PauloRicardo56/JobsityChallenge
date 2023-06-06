@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9B7CD6B-22C4-4584-AE1A-E702B83BF42B"
+            uuid = "E94DBD64-0CFA-413B-860D-A018EF725620"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Service/Service/DefaultNetworkRepository.swift"
+            filePath = "Home/Home/Service/DefaultHomeService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "request(endpoint:path:httpMethod:resultObject:completion:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchShows()"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "D9B7CD6B-22C4-4584-AE1A-E702B83BF42B - f691bcb0fb91c26e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Service.DefaultNetworkRepository.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, path: Swift.String, httpMethod: Swift.String, resultObject: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Service"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Paulo.Vieira/Repositories/JobsityChallenge/JobsityChallenge/Service/Service/DefaultNetworkRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1012">
-               </Location>
-               <Location
-                  uuid = "D9B7CD6B-22C4-4584-AE1A-E702B83BF42B - f691bcb0fb91c26e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Service.DefaultNetworkRepository.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, path: Swift.String, httpMethod: Swift.String, resultObject: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Service"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Paulo.Vieira/Repositories/JobsityChallenge/JobsityChallenge/Service/Service/DefaultNetworkRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1056">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,7 +9,7 @@ public final class DefaultNetworkRepository: NetworkRepository {
 
     public init() {}
 
-    public func request<T: Codable>(endpoint: String, path: String, httpMethod: String, resultObject: T.Type, completion: @escaping (Result<T?, Error>) -> Void) {
+    public func request<T: Codable>(endpoint: String, path: String, resultObject: T.Type, completion: @escaping (Result<T?, Error>) -> Void) {
 
         let session = URLSession.shared
         var urlComponents = URLComponents()
@@ -25,8 +25,8 @@ public final class DefaultNetworkRepository: NetworkRepository {
             if let data = data {
                 do {
                     let decode = JSONDecoder()
-                    let value = try decode.decode([T].self, from: data)
-                    completion(.success(value[0]))
+                    let value = try decode.decode(T.self, from: data)
+                    completion(.success(value))
                 } catch let error {
                     completion(.failure(error))
                 }
