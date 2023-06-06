@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		40F13B402A2FEC1B00168E0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B3F2A2FEC1B00168E0E /* Coordinator.swift */; };
+		40F13B482A2FF4F900168E0E /* UIIMageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B472A2FF4F900168E0E /* UIIMageView+DownloadImage.swift */; };
+		40F13B4A2A2FF6D200168E0E /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13B492A2FF6D200168E0E /* Service.framework */; };
+		40F13B4B2A2FF6D200168E0E /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13B492A2FF6D200168E0E /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40F668112A2FB4510037CCCD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F668082A2FB4510037CCCD /* Core.framework */; };
 		40F668162A2FB4510037CCCD /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F668152A2FB4510037CCCD /* CoreTests.swift */; };
 		40F668172A2FB4510037CCCD /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F6680B2A2FB4510037CCCD /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,9 +28,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		40F13B4C2A2FF6D200168E0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				40F13B4B2A2FF6D200168E0E /* Service.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2BE54859682B3E51E5820205 /* libPods-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F13B3F2A2FEC1B00168E0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		40F13B472A2FF4F900168E0E /* UIIMageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		40F13B492A2FF6D200168E0E /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F668082A2FB4510037CCCD /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F6680B2A2FB4510037CCCD /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		40F668102A2FB4510037CCCD /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F13B4A2A2FF6D200168E0E /* Service.framework in Frameworks */,
 				63706218499F6B44FDA30F3E /* libPods-Core.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +80,7 @@
 		0AB1BAFE61C77ACB6DBBFF77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40F13B492A2FF6D200168E0E /* Service.framework */,
 				2BE54859682B3E51E5820205 /* libPods-Core.a */,
 			);
 			name = Frameworks;
@@ -71,6 +92,14 @@
 				40F13B3F2A2FEC1B00168E0E /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		40F13B462A2FF4E900168E0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40F13B472A2FF4F900168E0E /* UIIMageView+DownloadImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		40F667FE2A2FB4510037CCCD = {
@@ -96,6 +125,7 @@
 		40F6680A2A2FB4510037CCCD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40F13B462A2FF4E900168E0E /* Extensions */,
 				40F13B3E2A2FEC0C00168E0E /* Coordinator */,
 				40F668202A2FB4630037CCCD /* ViewCode */,
 				40F6680B2A2FB4510037CCCD /* Core.h */,
@@ -152,6 +182,7 @@
 				40F668042A2FB4510037CCCD /* Sources */,
 				40F668052A2FB4510037CCCD /* Frameworks */,
 				40F668062A2FB4510037CCCD /* Resources */,
+				40F13B4C2A2FF6D200168E0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F13B482A2FF4F900168E0E /* UIIMageView+DownloadImage.swift in Sources */,
 				40F13B402A2FEC1B00168E0E /* Coordinator.swift in Sources */,
 				40F668222A2FB46A0037CCCD /* ViewCode.swift in Sources */,
 			);

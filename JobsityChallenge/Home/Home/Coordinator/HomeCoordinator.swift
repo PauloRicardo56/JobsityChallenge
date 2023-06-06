@@ -17,7 +17,13 @@ public final class HomeCoordinator: Coordinator {
     }
 
     public func start(completion: (() -> Void)? = nil) {
-        let controller = HomeViewController(interactor: DefaultHomeInteractor())
+        let controller = HomeViewController()
+        let interactor = DefaultHomeInteractor()
+        let presenter = DefaultHomePresenter()
+        controller.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = controller
+
         rootViewController.pushViewController(controller, animated: true)
     }
 }

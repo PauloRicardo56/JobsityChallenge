@@ -13,4 +13,9 @@ public protocol NetworkRepository {
         resultObject: T.Type,
         completion: @escaping (Result<T?, Error>) -> Void
     )
+
+    func request(
+        url: String,
+        completion: @escaping (Result<Data, Error>) -> Void
+    )
 }

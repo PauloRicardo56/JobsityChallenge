@@ -10,6 +10,8 @@
 		40F13B382A2FE23700168E0E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B372A2FE23700168E0E /* HomeInteractor.swift */; };
 		40F13B3A2A2FE27E00168E0E /* DefaultHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B392A2FE27E00168E0E /* DefaultHomeInteractor.swift */; };
 		40F13B3D2A2FEA5600168E0E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B3C2A2FEA5600168E0E /* HomeCoordinator.swift */; };
+		40F13B432A2FED3500168E0E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B422A2FED3500168E0E /* HomePresenter.swift */; };
+		40F13B452A2FED6000168E0E /* DefaultHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B442A2FED6000168E0E /* DefaultHomePresenter.swift */; };
 		40F667E52A2FA76E0037CCCD /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F667DC2A2FA76E0037CCCD /* Home.framework */; };
 		40F667EA2A2FA76E0037CCCD /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667E92A2FA76E0037CCCD /* HomeTests.swift */; };
 		40F667EB2A2FA76E0037CCCD /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F667DF2A2FA76E0037CCCD /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +54,8 @@
 		40F13B372A2FE23700168E0E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		40F13B392A2FE27E00168E0E /* DefaultHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeInteractor.swift; sourceTree = "<group>"; };
 		40F13B3C2A2FEA5600168E0E /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		40F13B422A2FED3500168E0E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		40F13B442A2FED6000168E0E /* DefaultHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomePresenter.swift; sourceTree = "<group>"; };
 		40F667DC2A2FA76E0037CCCD /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F667DF2A2FA76E0037CCCD /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		40F667E42A2FA76E0037CCCD /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		40F13B412A2FED2900168E0E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				40F13B422A2FED3500168E0E /* HomePresenter.swift */,
+				40F13B442A2FED6000168E0E /* DefaultHomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		40F667D22A2FA76E0037CCCD = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 			children = (
 				40F668272A2FBE750037CCCD /* View */,
 				40F668282A2FBE910037CCCD /* Interactor */,
+				40F13B412A2FED2900168E0E /* Presenter */,
 				40F13B3B2A2FEA4800168E0E /* Coordinator */,
 				40F668532A2FC57C0037CCCD /* Model */,
 				40F667DF2A2FA76E0037CCCD /* Home.h */,
@@ -326,7 +340,9 @@
 				40F668552A2FC58E0037CCCD /* Show.swift in Sources */,
 				40F667FB2A2FB31C0037CCCD /* HomeView.swift in Sources */,
 				40F13B3D2A2FEA5600168E0E /* HomeCoordinator.swift in Sources */,
+				40F13B452A2FED6000168E0E /* DefaultHomePresenter.swift in Sources */,
 				40F13B382A2FE23700168E0E /* HomeInteractor.swift in Sources */,
+				40F13B432A2FED3500168E0E /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

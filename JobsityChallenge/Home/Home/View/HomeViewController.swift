@@ -8,22 +8,17 @@
 import UIKit
 import Service
 
-class HomeViewController: UIViewController {
+protocol HomeViewDisplay: AnyObject {
+    func display(shows: [Show.ViewObject]?)
+}
 
-    private let interactor: HomeInteractor?
+final class HomeViewController: UIViewController {
+
+    var interactor: HomeInteractor?
 
     let homeView: HomeView = {
         .init()
     }()
-
-    init(interactor: HomeInteractor) {
-        self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func loadView() {
         super.loadView()
@@ -34,5 +29,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         interactor?.fetchShows()
+    }
+}
+
+extension HomeViewController: HomeViewDisplay {
+
+    func display(shows: [Show.ViewObject]?) {
+        // Stop loading
+        // Update collection view
     }
 }
