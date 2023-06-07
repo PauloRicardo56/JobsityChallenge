@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:JobsityChallenge.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Home/Home.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ShowDetails/ShowDetails.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EpisodeDetails/EpisodeDetails.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Service/Service.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
