@@ -17,9 +17,9 @@ final class HomeViewController: UIViewController {
     var interactor: HomeInteractor?
     var coordinator: HomeCoordinator?
 
-    lazy var homeView: HomeView = {
-        $0.delegate = self
-        return $0
+    lazy var homeView: HomeView = { view in
+        view.delegate = self
+        return view
     }(HomeView())
 
     override func loadView() {

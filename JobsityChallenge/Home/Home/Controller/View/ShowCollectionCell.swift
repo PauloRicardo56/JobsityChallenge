@@ -10,22 +10,20 @@ import Core
 
 final class ShowCollectionCell: UICollectionViewCell {
 
-    lazy var imageView: UIImageView = {
-        let view = UIImageView()
+    lazy var imageView: UIImageView = { view in
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
+    }(UIImageView())
 
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
+    lazy var titleLabel: UILabel = { label in
         label.backgroundColor = .black
         label.font = .systemFont(ofSize: 14)
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
+    }(UILabel())
 
     func configCell(with show: Show.ViewObject) {
         setupView()

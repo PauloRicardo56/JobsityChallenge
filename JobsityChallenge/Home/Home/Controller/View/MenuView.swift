@@ -16,33 +16,33 @@ final class MenuView: UIView {
 
     weak var delegate: MenuViewDelegate?
 
-    lazy var mainStackView: UIStackView = {
-        $0.distribution = .fillEqually
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
+    lazy var mainStackView: UIStackView = { view in
+        view.distribution = .fillEqually
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }(UIStackView())
 
-    lazy var homeButton: UIButton = {
-        $0.setTitle("Home", for: .normal)
-        return $0
+    lazy var homeButton: UIButton = { button in
+        button.setTitle("Home", for: .normal)
+        return button
     }(UIButton())
 
-    lazy var searchButton: UIButton = {
-        $0.setTitle("Search", for: .normal)
-        $0.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
-        return $0
+    lazy var searchButton: UIButton = { button in
+        button.setTitle("Search", for: .normal)
+        button.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
+        return button
     }(UIButton())
 
-    lazy var searchBar: UISearchBar = {
-        $0.searchBarStyle = .minimal
-        $0.backgroundColor = .black
-        $0.tintColor = .white
-        $0.searchTextField.textColor = .white
-        $0.showsCancelButton = true
-        $0.delegate = self
-        $0.isHidden = true
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
+    lazy var searchBar: UISearchBar = { bar in
+        bar.searchBarStyle = .minimal
+        bar.backgroundColor = .black
+        bar.tintColor = .white
+        bar.searchTextField.textColor = .white
+        bar.showsCancelButton = true
+        bar.delegate = self
+        bar.isHidden = true
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        return bar
     }(UISearchBar())
 
     init() {

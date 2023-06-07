@@ -18,10 +18,10 @@ final class HomeView: UIView {
     weak var delegate: HomeViewDelegate?
     private var shows: [Show.ViewObject] = []
 
-    lazy var menuView: MenuView = {
-        $0.delegate = self
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
+    lazy var menuView: MenuView = { view in
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }(MenuView())
 
     lazy var showsCollection: UICollectionView = {
