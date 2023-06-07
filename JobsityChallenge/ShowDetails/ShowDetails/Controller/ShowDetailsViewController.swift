@@ -11,7 +11,7 @@ protocol ShowDetailsDisplay: AnyObject {
     func showDetailsViewController(displayShowDetails show: ShowDetails.ViewObject)
     func showDetailsViewController(displayShowSeasons seasons: [Int])
     func showDetailsViewController(displayShowEpisodes episodes: [ShowEpisodesModel.ViewObject], from season: Int)
-    func showDetailsViewController(reloadEpisodeOfItem item: Int, and section: Int)
+    func showDetailsViewController(reloadEpisodeNumber number: Int)
 }
 
 final class ShowDetailsViewController: UIViewController {
@@ -60,9 +60,9 @@ extension ShowDetailsViewController: ShowDetailsDisplay {
         }
     }
 
-    func showDetailsViewController(reloadEpisodeOfItem item: Int, and section: Int) {
+    func showDetailsViewController(reloadEpisodeNumber number: Int) {
         DispatchQueue.main.async {
-            self.showDetailsView.reloadEpisode(season: section, episode: item)
+            self.showDetailsView.reloadEpisode(episode: number)
         }
     }
 }

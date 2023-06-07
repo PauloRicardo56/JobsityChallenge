@@ -25,11 +25,11 @@ struct ShowSeasons {
     }
 
     struct Image: Codable {
-        let medium, original: String
+        let medium, original: String?
     }
 
     struct Links: Codable {
-        let linksSelf: SelfClass
+        let linksSelf: SelfClass?
 
         enum CodingKeys: String, CodingKey {
             case linksSelf = "self"
@@ -37,17 +37,17 @@ struct ShowSeasons {
     }
 
     struct SelfClass: Codable {
-        let href: String
+        let href: String?
     }
 
     struct Network: Codable {
-        let id: Int
-        let name: String
-        let country: Country
-        let officialSite: String
+        let id: Int?
+        let name: String?
+        let country: Country?
+        let officialSite: String?
     }
 
     struct Country: Codable {
-        let name, code, timezone: String
+        let name, code, timezone: String?
     }
 }

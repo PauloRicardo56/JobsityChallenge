@@ -12,7 +12,7 @@ struct ShowEpisodesModel {
         let id: Int
         let url: String
         let name: String
-        let season, number: Int
+        let season, number: Int?
         let type, airdate, airtime: String?
         let airstamp: String?
         let runtime: Int?
@@ -27,11 +27,11 @@ struct ShowEpisodesModel {
         }
 
         struct Image: Codable {
-            let medium, original: String
+            let medium, original: String?
         }
 
         struct Links: Codable {
-            let linksSelf, show: SelfClass
+            let linksSelf, show: SelfClass?
 
             enum CodingKeys: String, CodingKey {
                 case linksSelf = "self"
@@ -40,11 +40,11 @@ struct ShowEpisodesModel {
         }
 
         struct SelfClass: Codable {
-            let href: String
+            let href: String?
         }
 
         struct Rating: Codable {
-            let average: Double
+            let average: Double?
         }
     }
 

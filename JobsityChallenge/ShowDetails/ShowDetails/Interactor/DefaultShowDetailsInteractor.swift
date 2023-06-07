@@ -38,32 +38,30 @@ final class DefaultShowDetailsInteractor: ShowDetailsInteractor {
             switch result {
             case .success(let showSeasons):
                 guard let seasons = showSeasons else { return }
-                let seasonsId = seasons.map { $0.id }
-                self?.fetchShowEpisodes(seasons: seasonsId)
-                self?.presenter?.showDetailsPresenter(showSeasons: seasonsId)
+                let firstSeason = seasons[1].id
+                self?.fetchShowEpisodes(season: firstSeason)
+                self?.presenter?.showDetailsPresenter(showSeasons: seasons.map { $0.id } )
             default:
                 break
             }
         })
     }
 
-    func fetchShowEpisodes(seasons: [Int]) {
-        seasons.forEach {
-            let path = "/seasons/\($0)/episodes"
+    func fetchShowEpisodes(season: Int) {
+        let path = "/seasons/\(season)/episodes"
 
-            repository?.request(endpoint: endpoint, path: path, headers: [:], resultObject: [ShowEpisodesModel.Response].self, completion: { [weak self] result in
-                switch result {
-                case .success(let episodes):
-                    guard let episodes = episodes else { return }
-                    var season = 0
-                    if !episodes.isEmpty {
-                        season = episodes[0].season
-                    }
-                    self?.presenter?.showDetailsPresenter(showEpisodes: episodes, from: season)
-                default:
-                    break
+        repository?.request(endpoint: endpoint, path: path, headers: [:], resultObject: [ShowEpisodesModel.Response].self, completion: { [weak self] result in
+            switch result {
+            case .success(let episodes):
+                guard let episodes = episodes else { return }
+                var season = 0
+                if !episodes.isEmpty {
+                    season = episodes[2].season ?? 0
                 }
-            })
-        }
+                self?.presenter?.showDetailsPresenter(showEpisodes: episodes, from: season)
+            default:
+                break
+            }
+        })
     }
 }

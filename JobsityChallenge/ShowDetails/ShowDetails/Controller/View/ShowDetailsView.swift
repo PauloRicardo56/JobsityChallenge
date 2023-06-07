@@ -11,7 +11,7 @@ import UIKit
 final class ShowDetailsView: UIView {
 
     private var showSeasons = [Int]()
-    private var seasonsEpisodes = [[ShowEpisodesModel.ViewObject]]()
+    private var episodes = [ShowEpisodesModel.ViewObject]()
 
     lazy var scrollView: UIScrollView = { view in
         view.backgroundColor = .clear
@@ -44,18 +44,22 @@ final class ShowDetailsView: UIView {
         return label
     }(UILabel())
 
+    lazy var selectSeasonButton: UIButton = { button in
+        button.backgroundColor = .gray
+        return button
+    }(UIButton())
+
     lazy var episodesCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 0
-        layout.headerReferenceSize = .init(width: 10, height: 50)
+        layout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.register(SeasonEpisodesCollectionViewCell.self, forCellWithReuseIdentifier: "episodes cell")
-        view.register(EpisodesCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        view.register(SingleEpisodesCollectionViewCell.self, forCellWithReuseIdentifier: "single episode cell")
         view.delegate = self
         view.dataSource = self
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -82,46 +86,40 @@ final class ShowDetailsView: UIView {
 
     func configEpisodesCollection(with showSeasons: [Int]) {
         self.showSeasons = showSeasons
-        showSeasons.forEach { _ in seasonsEpisodes.append([]) }
         episodesCollection.reloadData()
     }
 
     func configEpisodesOfASeason(season: Int, episodes: [ShowEpisodesModel.ViewObject]) {
-        seasonsEpisodes.insert(episodes, at: max(0, season - 1))
+        self.episodes = episodes
+        episodesCollection.reloadData()
     }
 
-    func reloadEpisode(season: Int, episode: Int) {
-        episodesCollection.reloadItems(at: [.init(item: episode - 1, section: season - 1)])
+    func reloadEpisode(episode: Int) {
+        episodesCollection.reloadItems(at: [.init(item: episode-1, section: 0)])
     }
 }
 
 extension ShowDetailsView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        showSeasons.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
     }
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        episodes.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "episodes cell", for: indexPath) as! SeasonEpisodesCollectionViewCell
-        cell.config(with: seasonsEpisodes[indexPath.section])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "single episode cell", for: indexPath) as! SingleEpisodesCollectionViewCell
+        cell.config(with: episodes[indexPath.item].image.image)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: scrollView.frame.width, height: 150)
+        .init(width: 250, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        delegate?.homeView(didSelectShow: shows[indexPath.item])
-    }
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! EpisodesCollectionHeaderView
-        cell.configWith(title: "Season \(indexPath.section + 1)")
-        return cell
     }
 }
 
@@ -160,9 +158,9 @@ extension ShowDetailsView: ViewCoding {
             summaryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
             episodesCollection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            episodesCollection.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 30),
+            episodesCollection.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 80),
             episodesCollection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            episodesCollection.heightAnchor.constraint(equalToConstant: 4 * (50 + 150)),
+            episodesCollection.heightAnchor.constraint(equalToConstant: 150),
             episodesCollection.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30),
         ])
     }

@@ -22,6 +22,11 @@ final class SingleEpisodesCollectionViewCell: UICollectionViewCell {
         imageView.image = image
         backgroundColor = .gray
     }
+
+    func config() {
+        setupView()
+        backgroundColor = .green
+    }
 }
 
 extension SingleEpisodesCollectionViewCell: ViewCoding {

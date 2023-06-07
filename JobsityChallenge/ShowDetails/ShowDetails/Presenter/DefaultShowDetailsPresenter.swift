@@ -32,14 +32,14 @@ final class DefaultShowDetailsPresenter: ShowDetailsPresenter {
         guard let episodes = episodes else { return }
         var season = 0
         if !episodes.isEmpty {
-            season = episodes[0].season
+            season = episodes[0].season ?? 0
         }
 
         DispatchQueue.main.async {
             let episodesVO = episodes.map { episode in
                 let image = UIImageView(from: episode.image?.medium ?? "") { [episode] in
-                    let episodeNumber = episode.number
-                    self.viewController?.showDetailsViewController(reloadEpisodeOfItem: episodeNumber, and: episode.season)
+                    let episodeNumber = episode.number ?? 0
+                    self.viewController?.showDetailsViewController(reloadEpisodeNumber: episodeNumber)
                 }
                 let episodeVO = ShowEpisodesModel.ViewObject(image: image)
                 return episodeVO
@@ -47,6 +47,5 @@ final class DefaultShowDetailsPresenter: ShowDetailsPresenter {
 
             self.viewController?.showDetailsViewController(displayShowEpisodes: episodesVO, from: season)
         }
-
     }
 }
