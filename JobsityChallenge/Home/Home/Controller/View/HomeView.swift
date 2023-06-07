@@ -103,7 +103,7 @@ extension HomeView: ViewCoding {
             menuView.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             showsCollection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            showsCollection.topAnchor.constraint(equalTo: menuView.bottomAnchor),
+            showsCollection.topAnchor.constraint(equalTo: menuView.bottomAnchor, constant: 14),
             showsCollection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             showsCollection.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])

@@ -40,7 +40,7 @@ final class MenuView: UIView {
         $0.searchTextField.textColor = .white
         $0.showsCancelButton = true
         $0.delegate = self
-//        $0.isHidden = true
+        $0.isHidden = true
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UISearchBar())

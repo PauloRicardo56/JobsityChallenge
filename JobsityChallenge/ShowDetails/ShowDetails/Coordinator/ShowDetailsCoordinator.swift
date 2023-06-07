@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import EpisodeDetails
 
 public final class ShowDetailsCoordinator: Coordinator {
 
@@ -28,5 +29,16 @@ public final class ShowDetailsCoordinator: Coordinator {
         presenter.viewController = controller
 
         rootViewController.pushViewController(controller, animated: true)
+    }
+
+    func showEpisodeDetails(episode: ShowEpisodesModel.ViewObject) {
+        let episodeDetailsVO = EpisodeDetailsModel.ViewObject(
+            image: episode.image,
+            name: episode.name,
+            episodeAndSeasonNumber: episode.episodeAndSeasonNumber,
+            summary: episode.summary)
+        let episodeDetailsCoordinator = EpisodeDetailsCoordinator(rootViewController: rootViewController)
+        episodeDetailsCoordinator.episode = episodeDetailsVO
+        episodeDetailsCoordinator.start()
     }
 }

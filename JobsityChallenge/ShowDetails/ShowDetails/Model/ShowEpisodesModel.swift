@@ -50,5 +50,8 @@ struct ShowEpisodesModel {
 
     struct ViewObject {
         let image: UIImageView
+        let name: String
+        let episodeAndSeasonNumber: String
+        let summary: String
     }
 }

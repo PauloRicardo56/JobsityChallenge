@@ -10,6 +10,7 @@ import UIKit
 
 protocol ShowDetailsViewDelegate: AnyObject {
     func showDetailsView(didSelectSeason seasonId: Int)
+    func showDetailsView(didSelectEpisode episode: ShowEpisodesModel.ViewObject)
 }
 
 final class ShowDetailsView: UIView {
@@ -25,10 +26,10 @@ final class ShowDetailsView: UIView {
         return view
     }(UIScrollView())
 
-    lazy var imageView: UIImageView = { view in
-        view.contentMode = .scaleAspectFit
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    lazy var imageView: UIImageView = { image in
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }(UIImageView())
 
     lazy var airedLabel: UILabel = { label in
@@ -174,7 +175,7 @@ extension ShowDetailsView: UICollectionViewDataSource, UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        delegate?.showDetailsView(didSelectEpisode: episodes[indexPath.item])
     }
 }
 
@@ -211,9 +212,7 @@ extension ShowDetailsView: ViewCoding {
         scrollView.addSubview(genresLabel)
         scrollView.addSubview(summaryLabel)
         scrollView.addSubview(selectSeasonButton)
-//        selectSeasonButton.addSubview(buttonIcon)
         scrollView.addSubview(episodesCollection)
-//        addSubview(pickerView)
         addSubview(dummyTextField)
     }
 
@@ -250,12 +249,7 @@ extension ShowDetailsView: ViewCoding {
             episodesCollection.topAnchor.constraint(equalTo: selectSeasonButton.bottomAnchor, constant: 14),
             episodesCollection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             episodesCollection.heightAnchor.constraint(equalToConstant: 150),
-            episodesCollection.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30),
-
-//            pickerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            pickerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            pickerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-//            pickerView.heightAnchor.constraint(equalToConstant: 200),
+            episodesCollection.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30)
         ])
     }
 }

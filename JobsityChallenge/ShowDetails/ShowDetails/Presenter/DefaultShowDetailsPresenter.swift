@@ -43,7 +43,11 @@ final class DefaultShowDetailsPresenter: ShowDetailsPresenter {
                     let episodeNumber = episode.number ?? 0
                     self?.viewController?.showDetailsViewController(reloadEpisodeNumber: episodeNumber)
                 }
-                let episodeVO = ShowEpisodesModel.ViewObject(image: image)
+                let episodeVO = ShowEpisodesModel.ViewObject(
+                    image: image,
+                    name: episode.name,
+                    episodeAndSeasonNumber: "E\(episode.number ?? -1)S\(episode.season ?? -1)",
+                    summary: episode.summary?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) ?? "")
                 return episodeVO
             }
 

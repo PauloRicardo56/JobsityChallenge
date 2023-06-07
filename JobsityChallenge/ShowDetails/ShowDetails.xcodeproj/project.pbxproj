@@ -23,6 +23,8 @@
 		40F13BC02A30C5DD00168E0E /* ShowSeasonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13BBF2A30C5DD00168E0E /* ShowSeasonsModel.swift */; };
 		40F13BC22A30C9EB00168E0E /* ShowEpisodesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13BC12A30C9EB00168E0E /* ShowEpisodesModel.swift */; };
 		40F13BC82A30D6A100168E0E /* SingleEpisodesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13BC72A30D6A100168E0E /* SingleEpisodesCollectionViewCell.swift */; };
+		40F13C002A31310700168E0E /* EpisodeDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13BFF2A31310700168E0E /* EpisodeDetails.framework */; };
+		40F13C012A31310800168E0E /* EpisodeDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13BFF2A31310700168E0E /* EpisodeDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F64912A918BC9532FADB2A2 /* libPods-ShowDetails.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED438C04810863B25023593C /* libPods-ShowDetails.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,20 @@
 			remoteInfo = ShowDetails;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40F13C022A31310800168E0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				40F13C012A31310800168E0E /* EpisodeDetails.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1CD927B137C7A9A4E5C7ED57 /* Pods-ShowDetails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDetails.release.xcconfig"; path = "Target Support Files/Pods-ShowDetails/Pods-ShowDetails.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +71,7 @@
 		40F13BBF2A30C5DD00168E0E /* ShowSeasonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSeasonsModel.swift; sourceTree = "<group>"; };
 		40F13BC12A30C9EB00168E0E /* ShowEpisodesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEpisodesModel.swift; sourceTree = "<group>"; };
 		40F13BC72A30D6A100168E0E /* SingleEpisodesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEpisodesCollectionViewCell.swift; sourceTree = "<group>"; };
+		40F13BFF2A31310700168E0E /* EpisodeDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EpisodeDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6F29C45B5114FA58EB7BAE /* Pods-ShowDetails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDetails.debug.xcconfig"; path = "Target Support Files/Pods-ShowDetails/Pods-ShowDetails.debug.xcconfig"; sourceTree = "<group>"; };
 		ED438C04810863B25023593C /* libPods-ShowDetails.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShowDetails.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +84,7 @@
 				40F13BA52A30A1F800168E0E /* Service.framework in Frameworks */,
 				40F13BA32A30A1F800168E0E /* Core.framework in Frameworks */,
 				5F64912A918BC9532FADB2A2 /* libPods-ShowDetails.a in Frameworks */,
+				40F13C002A31310700168E0E /* EpisodeDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +151,7 @@
 		40F13BA02A30A1F800168E0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40F13BFF2A31310700168E0E /* EpisodeDetails.framework */,
 				40F13BA12A30A1F800168E0E /* Core.framework */,
 				40F13BA22A30A1F800168E0E /* Service.framework */,
 				ED438C04810863B25023593C /* libPods-ShowDetails.a */,
@@ -219,6 +238,7 @@
 				40F13B812A30A14A00168E0E /* Sources */,
 				40F13B822A30A14A00168E0E /* Frameworks */,
 				40F13B832A30A14A00168E0E /* Resources */,
+				40F13C022A31310800168E0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

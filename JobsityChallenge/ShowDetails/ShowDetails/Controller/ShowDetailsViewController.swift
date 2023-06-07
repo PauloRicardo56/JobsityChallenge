@@ -51,6 +51,10 @@ extension ShowDetailsViewController: ShowDetailsViewDelegate {
     func showDetailsView(didSelectSeason seasonId: Int) {
         interactor?.fetchShowEpisodes(season: seasonId)
     }
+
+    func showDetailsView(didSelectEpisode episode: ShowEpisodesModel.ViewObject) {
+        coordinator?.showEpisodeDetails(episode: episode)
+    }
 }
 
 extension ShowDetailsViewController: ShowDetailsDisplay {

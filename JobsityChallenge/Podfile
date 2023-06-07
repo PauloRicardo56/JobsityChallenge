@@ -22,6 +22,15 @@ target 'ShowDetails' do
   show_details_pods
 end
 
+# EpisodeDetails module
+def episode_details_pods
+end
+
+target 'EpisodeDetails' do
+  project 'EpisodeDetails/EpisodeDetails.project'
+  episode_details_pods
+end
+
 # Core module
 def core_pods
 end
@@ -47,6 +56,7 @@ def application_pods
   core_pods
   service_pods
   show_details_pods
+  episode_details_pods
 end
 
 target 'JobsityChallenge' do
