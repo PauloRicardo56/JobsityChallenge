@@ -7,4 +7,5 @@
 
 protocol HomeInteractor {
     func fetchShows()
+    func searchShows(with text: String)
 }

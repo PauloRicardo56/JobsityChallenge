@@ -9,17 +9,18 @@ import UIKit
 import Service
 
 protocol HomeViewDisplay: AnyObject {
-    func display(shows: [Show.ViewObject])
-    func reloadShow(of id: Int)
+    func homeViewController(displayShows shows: [Show.ViewObject])
+    func homeViewController(reloadShowOfId id: Int)
 }
 
 final class HomeViewController: UIViewController {
 
     var interactor: HomeInteractor?
 
-    let homeView: HomeView = {
-        .init()
-    }()
+    lazy var homeView: HomeView = {
+        $0.delegate = self
+        return $0
+    }(HomeView())
 
     override func loadView() {
         super.loadView()
@@ -28,19 +29,26 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
         view.backgroundColor = .black
         interactor?.fetchShows()
     }
 }
+extension HomeViewController: HomeViewDelegate {
+
+    func homeView(didSearchWithText text: String) {
+        interactor?.searchShows(with: text)
+    }
+}
 
 extension HomeViewController: HomeViewDisplay {
-    func reloadShow(of id: Int) {
-        homeView.reloadItem(with: id)
-    }
-
-    func display(shows: [Show.ViewObject]) {
+    func homeViewController(displayShows shows: [Show.ViewObject]) {
         // Stop loading
         homeView.reloadCollection(with: shows)
+    }
+
+    func homeViewController(reloadShowOfId id: Int) {
+        homeView.reloadItem(with: id)
     }
 }

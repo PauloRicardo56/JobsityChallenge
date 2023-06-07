@@ -80,4 +80,9 @@ struct Show {
         let name: String
         let image: UIImageView
     }
+
+    struct ShowSearchResponse: Codable {
+        let score: Double?
+        let show: Response
+    }
 }

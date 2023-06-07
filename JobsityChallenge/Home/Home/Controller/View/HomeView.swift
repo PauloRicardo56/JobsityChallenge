@@ -8,15 +8,20 @@
 import UIKit
 import Core
 
+protocol HomeViewDelegate: AnyObject {
+    func homeView(didSearchWithText text: String)
+}
+
 final class HomeView: UIView {
 
+    weak var delegate: HomeViewDelegate?
     private var shows: [Show.ViewObject] = []
 
     lazy var menuView: MenuView = {
-        let view = MenuView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+        $0.delegate = self
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(MenuView())
 
     lazy var showsCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -49,6 +54,12 @@ final class HomeView: UIView {
 
     func reloadItem(with id: Int) {
         showsCollection.reloadItems(at: [.init(row: id, section: 0)])
+    }
+}
+
+extension HomeView: MenuViewDelegate {
+    func menuView(didSearchWithText text: String) {
+        delegate?.homeView(didSearchWithText: text)
     }
 }
 
@@ -87,7 +98,7 @@ extension HomeView: ViewCoding {
         NSLayoutConstraint.activate([
             menuView.widthAnchor.constraint(equalTo: widthAnchor),
             menuView.topAnchor.constraint(equalTo: topAnchor),
-            menuView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            menuView.heightAnchor.constraint(equalToConstant: 80),
             menuView.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             showsCollection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),

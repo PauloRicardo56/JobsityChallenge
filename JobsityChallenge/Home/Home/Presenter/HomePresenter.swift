@@ -7,4 +7,5 @@
 
 protocol HomePresenter {
     func present(shows: [Show.Response]?)
+    func present(shows: [Show.ShowSearchResponse]?)
 }

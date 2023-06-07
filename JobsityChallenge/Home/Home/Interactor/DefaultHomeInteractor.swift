@@ -31,6 +31,20 @@ final class DefaultHomeInteractor: HomeInteractor {
             }
         })
     }
+
+    func searchShows(with text: String) {
+        let path = "/search/shows"
+        let headers = ["q": text]
+
+        repository?.request(endpoint: endpoint, path: path, headers: headers, resultObject: [Show.ShowSearchResponse].self, completion: { [weak self] result in
+            switch result {
+            case .success(let shows):
+                self?.presenter?.present(shows: shows)
+            default:
+                break
+            }
+        })
+    }
     
     func downloadImage(from url: String, completion: @escaping (Data?) -> Void) {
         repository?.request(url: url, completion: { result in

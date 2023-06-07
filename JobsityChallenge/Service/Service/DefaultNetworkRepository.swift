@@ -22,9 +22,9 @@ public final class DefaultNetworkRepository: NetworkRepository {
     }
 
     public func request(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        let url = URL(string: url)
+        guard let url = URL(string: url) else { return }
 
-        URLSession.shared.dataTask(with: url!) { data, _, err in
+        URLSession.shared.dataTask(with: url) { data, _, err in
             if let err = err {
                 completion(.failure(err))
             }
