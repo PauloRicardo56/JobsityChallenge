@@ -9,6 +9,7 @@ import UIKit
 import Core
 
 protocol HomeViewDelegate: AnyObject {
+    func homeView(didTapHome view: HomeView)
     func homeView(didSearchWithText text: String)
     func homeView(didSelectShow show: Show.ViewObject)
 }
@@ -59,6 +60,10 @@ final class HomeView: UIView {
 }
 
 extension HomeView: MenuViewDelegate {
+    func menuView(didTapHome view: MenuView) {
+        delegate?.homeView(didTapHome: self)
+    }
+
     func menuView(didSearchWithText text: String) {
         delegate?.homeView(didSearchWithText: text)
     }

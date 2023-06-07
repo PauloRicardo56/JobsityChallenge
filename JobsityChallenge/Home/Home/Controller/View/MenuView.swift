@@ -9,6 +9,7 @@ import UIKit
 import Core
 
 protocol MenuViewDelegate: AnyObject {
+    func menuView(didTapHome view: MenuView)
     func menuView(didSearchWithText text: String)
 }
 
@@ -24,6 +25,7 @@ final class MenuView: UIView {
 
     lazy var homeButton: UIButton = { button in
         button.setTitle("Home", for: .normal)
+        button.addTarget(self, action: #selector(didTapHome), for: .touchUpInside)
         return button
     }(UIButton())
 
@@ -54,6 +56,10 @@ final class MenuView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc func didTapHome() {
+        delegate?.menuView(didTapHome: self)
     }
 
     @objc func didTapSearch() {

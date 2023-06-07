@@ -37,6 +37,9 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewDelegate {
+    func homeView(didTapHome view: HomeView) {
+        interactor?.fetchShows()
+    }
 
     func homeView(didSearchWithText text: String) {
         interactor?.searchShows(with: text)
@@ -49,7 +52,6 @@ extension HomeViewController: HomeViewDelegate {
 
 extension HomeViewController: HomeViewDisplay {
     func homeViewController(displayShows shows: [Show.ViewObject]) {
-        // Stop loading
         homeView.reloadCollection(with: shows)
     }
 

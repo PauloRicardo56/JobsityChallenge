@@ -102,6 +102,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		40F13C052A314EC400168E0E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		40F667FE2A2FB4510037CCCD = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +132,7 @@
 		40F6680A2A2FB4510037CCCD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40F13C052A314EC400168E0E /* UI */,
 				40F13B462A2FF4E900168E0E /* Extensions */,
 				40F13B3E2A2FEC0C00168E0E /* Coordinator */,
 				40F668202A2FB4630037CCCD /* ViewCode */,
