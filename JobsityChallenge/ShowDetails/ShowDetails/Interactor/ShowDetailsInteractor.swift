@@ -8,4 +8,5 @@
 protocol ShowDetailsInteractor {
     func fetchShowDetails(with id: Int?)
     func fetchShowSeasons(with id: Int?)
+    func fetchShowEpisodes(season: Int)
 }

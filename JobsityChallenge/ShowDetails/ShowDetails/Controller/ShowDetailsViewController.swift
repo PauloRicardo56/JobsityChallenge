@@ -19,8 +19,9 @@ final class ShowDetailsViewController: UIViewController {
     var interactor: ShowDetailsInteractor?
     var coordinator: ShowDetailsCoordinator?
 
-    lazy var showDetailsView: ShowDetailsView = {
-        $0
+    lazy var showDetailsView: ShowDetailsView = { view in
+        view.delegate = self
+        return view
     }(ShowDetailsView())
 
     override func loadView() {
@@ -37,6 +38,18 @@ final class ShowDetailsViewController: UIViewController {
         showDetailsView.configView(with: image)
         interactor?.fetchShowDetails(with: showId)
         interactor?.fetchShowSeasons(with: showId)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+}
+
+extension ShowDetailsViewController: ShowDetailsViewDelegate {
+
+    func showDetailsView(didSelectSeason seasonId: Int) {
+        interactor?.fetchShowEpisodes(season: seasonId)
     }
 }
 

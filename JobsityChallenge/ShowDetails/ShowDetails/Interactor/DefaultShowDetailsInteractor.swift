@@ -38,7 +38,7 @@ final class DefaultShowDetailsInteractor: ShowDetailsInteractor {
             switch result {
             case .success(let showSeasons):
                 guard let seasons = showSeasons else { return }
-                let firstSeason = seasons[1].id
+                let firstSeason = seasons[0].id
                 self?.fetchShowEpisodes(season: firstSeason)
                 self?.presenter?.showDetailsPresenter(showSeasons: seasons.map { $0.id } )
             default:

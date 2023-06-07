@@ -8,10 +8,16 @@
 import Core
 import UIKit
 
+protocol ShowDetailsViewDelegate: AnyObject {
+    func showDetailsView(didSelectSeason seasonId: Int)
+}
+
 final class ShowDetailsView: UIView {
 
+    weak var delegate: ShowDetailsViewDelegate?
     private var showSeasons = [Int]()
     private var episodes = [ShowEpisodesModel.ViewObject]()
+    private var selectedSeason: Int = 0
 
     lazy var scrollView: UIScrollView = { view in
         view.backgroundColor = .clear
@@ -45,13 +51,47 @@ final class ShowDetailsView: UIView {
     }(UILabel())
 
     lazy var selectSeasonButton: UIButton = { button in
+        button.setTitle("Season 1", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
         button.backgroundColor = .gray
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        button.addTarget(nil, action: #selector(selectSeasonAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }(UIButton())
 
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.tintColor = .white
+        pickerView.backgroundColor = .darkGray
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        return pickerView
+    }()
+
+    lazy var toolBar: UIToolbar = { bar in
+        bar.barStyle = .black
+        bar.tintColor = .white
+        bar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePickerView))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPickerView))
+        bar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        bar.isUserInteractionEnabled = true
+        return bar
+    }(UIToolbar())
+
+    lazy var dummyTextField: UITextField = { field in
+        field.inputView = pickerView
+        field.inputAccessoryView = toolBar
+        field.translatesAutoresizingMaskIntoConstraints = false
+        return field
+    }(UITextField())
+
     lazy var episodesCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 20
+        layout.minimumLineSpacing = 40
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -87,6 +127,7 @@ final class ShowDetailsView: UIView {
     func configEpisodesCollection(with showSeasons: [Int]) {
         self.showSeasons = showSeasons
         episodesCollection.reloadData()
+        pickerView.reloadAllComponents()
     }
 
     func configEpisodesOfASeason(season: Int, episodes: [ShowEpisodesModel.ViewObject]) {
@@ -96,6 +137,20 @@ final class ShowDetailsView: UIView {
 
     func reloadEpisode(episode: Int) {
         episodesCollection.reloadItems(at: [.init(item: episode-1, section: 0)])
+    }
+
+    @objc func selectSeasonAction() {
+        dummyTextField.becomeFirstResponder()
+    }
+
+    @objc func donePickerView() {
+        dummyTextField.resignFirstResponder()
+        delegate?.showDetailsView(didSelectSeason: showSeasons[selectedSeason])
+        selectSeasonButton.setTitle("Season \(selectedSeason+1)", for: .normal)
+    }
+
+    @objc func cancelPickerView() {
+        dummyTextField.resignFirstResponder()
     }
 }
 
@@ -119,7 +174,32 @@ extension ShowDetailsView: UICollectionViewDataSource, UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        delegate?.homeView(didSelectShow: shows[indexPath.item])
+
+    }
+}
+
+extension ShowDetailsView: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        showSeasons.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        "Season \(row+1)"
+    }
+}
+
+extension ShowDetailsView: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedSeason = row
+    }
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        .init(string: "Season \(row+1)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 }
 
@@ -130,7 +210,11 @@ extension ShowDetailsView: ViewCoding {
         scrollView.addSubview(airedLabel)
         scrollView.addSubview(genresLabel)
         scrollView.addSubview(summaryLabel)
+        scrollView.addSubview(selectSeasonButton)
+//        selectSeasonButton.addSubview(buttonIcon)
         scrollView.addSubview(episodesCollection)
+//        addSubview(pickerView)
+        addSubview(dummyTextField)
     }
 
     func setupViewContraints() {
@@ -157,11 +241,21 @@ extension ShowDetailsView: ViewCoding {
             summaryLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
             summaryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
+            selectSeasonButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 25),
+            selectSeasonButton.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 80),
+            selectSeasonButton.widthAnchor.constraint(equalToConstant: 110),
+            selectSeasonButton.heightAnchor.constraint(equalToConstant: 26),
+
             episodesCollection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            episodesCollection.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 80),
+            episodesCollection.topAnchor.constraint(equalTo: selectSeasonButton.bottomAnchor, constant: 14),
             episodesCollection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             episodesCollection.heightAnchor.constraint(equalToConstant: 150),
             episodesCollection.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30),
+
+//            pickerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            pickerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            pickerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            pickerView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
 }

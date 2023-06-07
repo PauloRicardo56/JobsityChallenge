@@ -5,6 +5,11 @@
 //  Created by Paulo Ricardo de Araujo Vieira on 06/06/23.
 //
 
+enum URLError: Error {
+    case invalidURL
+}
+
+
 public final class DefaultNetworkRepository: NetworkRepository {
 
     public init() {}
@@ -22,7 +27,10 @@ public final class DefaultNetworkRepository: NetworkRepository {
     }
 
     public func request(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else {
+            completion(.failure(URLError.invalidURL))
+            return
+        }
 
         URLSession.shared.dataTask(with: url) { data, _, err in
             if let err = err {

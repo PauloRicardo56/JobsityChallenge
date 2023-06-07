@@ -12,7 +12,6 @@ final class SingleEpisodesCollectionViewCell: UICollectionViewCell {
 
     lazy var imageView: UIImageView = { view in
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .green
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }(UIImageView())
@@ -20,12 +19,10 @@ final class SingleEpisodesCollectionViewCell: UICollectionViewCell {
     func config(with image: UIImage?) {
         setupView()
         imageView.image = image
-        backgroundColor = .gray
     }
 
     func config() {
         setupView()
-        backgroundColor = .green
     }
 }
 

@@ -11,9 +11,11 @@ import UIKit
 final class DefaultShowDetailsPresenter: ShowDetailsPresenter {
 
     weak var viewController: ShowDetailsDisplay?
+    private var seasonImageURL: String?
 
     func showDetailsPresenter(showDetails show: ShowDetails.Response?) {
         let summary = show?.summary?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        seasonImageURL = show?.image?.medium
         let detailsVO = ShowDetails.ViewObject(
             name: show?.name ?? "",
             daysAired: "\(show?.premiered ?? "") - \(show?.ended ?? "Running")",
@@ -36,10 +38,10 @@ final class DefaultShowDetailsPresenter: ShowDetailsPresenter {
         }
 
         DispatchQueue.main.async {
-            let episodesVO = episodes.map { episode in
-                let image = UIImageView(from: episode.image?.medium ?? "") { [episode] in
+            let episodesVO = episodes.map { [weak self] episode in
+                let image = UIImageView(from: episode.image?.medium ?? "", urlFallback: self?.seasonImageURL) { [episode] in
                     let episodeNumber = episode.number ?? 0
-                    self.viewController?.showDetailsViewController(reloadEpisodeNumber: episodeNumber)
+                    self?.viewController?.showDetailsViewController(reloadEpisodeNumber: episodeNumber)
                 }
                 let episodeVO = ShowEpisodesModel.ViewObject(image: image)
                 return episodeVO
