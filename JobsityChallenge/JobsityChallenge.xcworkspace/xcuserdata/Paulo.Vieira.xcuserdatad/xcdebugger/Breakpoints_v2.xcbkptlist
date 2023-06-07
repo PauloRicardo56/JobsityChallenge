@@ -23,16 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C2D2DF7C-C94A-4325-9909-3824C7C36AC5"
+            uuid = "072CEC04-A80B-48B2-8F56-E6293DCC686D"
             shouldBeEnabled = "Yes"
+            condition = "image == nil"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Service/Service/DefaultNetworkRepository.swift"
+            filePath = "ShowDetails/ShowDetails/Presenter/DefaultShowDetailsPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "task(with:completion:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "showDetailsPresenter(showEpisodes:from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

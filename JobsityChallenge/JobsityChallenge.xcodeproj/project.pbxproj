@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07C39519A8FC570442706D05 /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424189DB523B1000182CC2E7 /* Pods_JobsityChallenge.framework */; };
+		3B28579DBDEAB3E82F0FB26E /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9812FED8414C1306E89E01 /* Pods_JobsityChallenge.framework */; };
 		40F667A32A2FA1340037CCCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667A22A2FA1340037CCCD /* AppDelegate.swift */; };
 		40F667A52A2FA1340037CCCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667A42A2FA1340037CCCD /* SceneDelegate.swift */; };
 		40F667AC2A2FA1350037CCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F667AB2A2FA1350037CCCD /* Assets.xcassets */; };
@@ -16,7 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35117354AA088F0AFEFA0534 /* Pods-JobsityChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		40F6679F2A2FA1340037CCCD /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F667A22A2FA1340037CCCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40F667A42A2FA1340037CCCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,8 +23,9 @@
 		40F667AE2A2FA1350037CCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40F667B02A2FA1350037CCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F667F62A2FB03C0037CCCD /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		424189DB523B1000182CC2E7 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A55746FB6E0A184871EA9704 /* Pods-JobsityChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		69E06774DDE808EFC2105B18 /* Pods-JobsityChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		6E9812FED8414C1306E89E01 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE7E7EF53086E22D006B8C10 /* Pods-JobsityChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F667F72A2FB03C0037CCCD /* Home.framework in Frameworks */,
-				07C39519A8FC570442706D05 /* Pods_JobsityChallenge.framework in Frameworks */,
+				3B28579DBDEAB3E82F0FB26E /* Pods_JobsityChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +44,8 @@
 		0A5B9FF1C1D55C795CD415D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				35117354AA088F0AFEFA0534 /* Pods-JobsityChallenge.debug.xcconfig */,
-				A55746FB6E0A184871EA9704 /* Pods-JobsityChallenge.release.xcconfig */,
+				69E06774DDE808EFC2105B18 /* Pods-JobsityChallenge.debug.xcconfig */,
+				FE7E7EF53086E22D006B8C10 /* Pods-JobsityChallenge.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				40F667F62A2FB03C0037CCCD /* Home.framework */,
-				424189DB523B1000182CC2E7 /* Pods_JobsityChallenge.framework */,
+				6E9812FED8414C1306E89E01 /* Pods_JobsityChallenge.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40F667C92A2FA1360037CCCD /* Build configuration list for PBXNativeTarget "JobsityChallenge" */;
 			buildPhases = (
-				84306FB31177510C484DA505 /* [CP] Check Pods Manifest.lock */,
+				2D5B4E481275E22DE7E427D9 /* [CP] Check Pods Manifest.lock */,
 				40F6679B2A2FA1340037CCCD /* Sources */,
 				40F6679C2A2FA1340037CCCD /* Frameworks */,
 				40F6679D2A2FA1340037CCCD /* Resources */,
@@ -156,7 +156,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84306FB31177510C484DA505 /* [CP] Check Pods Manifest.lock */ = {
+		2D5B4E481275E22DE7E427D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,7 +320,7 @@
 		};
 		40F667CA2A2FA1360037CCCD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35117354AA088F0AFEFA0534 /* Pods-JobsityChallenge.debug.xcconfig */;
+			baseConfigurationReference = 69E06774DDE808EFC2105B18 /* Pods-JobsityChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -351,7 +351,7 @@
 		};
 		40F667CB2A2FA1360037CCCD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A55746FB6E0A184871EA9704 /* Pods-JobsityChallenge.release.xcconfig */;
+			baseConfigurationReference = FE7E7EF53086E22D006B8C10 /* Pods-JobsityChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

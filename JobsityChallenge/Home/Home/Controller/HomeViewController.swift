@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Service
 
 protocol HomeViewDisplay: AnyObject {
     func homeViewController(displayShows shows: [Show.ViewObject])
@@ -16,6 +15,7 @@ protocol HomeViewDisplay: AnyObject {
 final class HomeViewController: UIViewController {
 
     var interactor: HomeInteractor?
+    var coordinator: HomeCoordinator?
 
     lazy var homeView: HomeView = {
         $0.delegate = self
@@ -35,10 +35,15 @@ final class HomeViewController: UIViewController {
         interactor?.fetchShows()
     }
 }
+
 extension HomeViewController: HomeViewDelegate {
 
     func homeView(didSearchWithText text: String) {
         interactor?.searchShows(with: text)
+    }
+
+    func homeView(didSelectShow show: Show.ViewObject) {
+        coordinator?.homeCoordinator(showDetailsOfShow: show)
     }
 }
 

@@ -13,6 +13,8 @@
 		40F13B432A2FED3500168E0E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B422A2FED3500168E0E /* HomePresenter.swift */; };
 		40F13B452A2FED6000168E0E /* DefaultHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B442A2FED6000168E0E /* DefaultHomePresenter.swift */; };
 		40F13B4F2A2FFDDA00168E0E /* ShowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B4E2A2FFDDA00168E0E /* ShowCollectionCell.swift */; };
+		40F13BAC2A30A38000168E0E /* ShowDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13BAB2A30A38000168E0E /* ShowDetails.framework */; };
+		40F13BAD2A30A38000168E0E /* ShowDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13BAB2A30A38000168E0E /* ShowDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40F667E52A2FA76E0037CCCD /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F667DC2A2FA76E0037CCCD /* Home.framework */; };
 		40F667EA2A2FA76E0037CCCD /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667E92A2FA76E0037CCCD /* HomeTests.swift */; };
 		40F667EB2A2FA76E0037CCCD /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F667DF2A2FA76E0037CCCD /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,7 +23,6 @@
 		40F667FD2A2FB37B0037CCCD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F667FC2A2FB37B0037CCCD /* MenuView.swift */; };
 		40F668242A2FB4D60037CCCD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F668232A2FB4D60037CCCD /* Core.framework */; };
 		40F668502A2FC4600037CCCD /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F6684F2A2FC4600037CCCD /* Service.framework */; };
-		40F668512A2FC4600037CCCD /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40F6684F2A2FC4600037CCCD /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40F668552A2FC58E0037CCCD /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F668542A2FC58E0037CCCD /* Show.swift */; };
 		C2AE53B620824EE9FE6F80A9 /* libPods-Home.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B2F139B460CD57F4C16DB5 /* libPods-Home.a */; };
 /* End PBXBuildFile section */
@@ -37,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		40F668522A2FC4610037CCCD /* Embed Frameworks */ = {
+		40F13BAE2A30A38000168E0E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				40F668512A2FC4600037CCCD /* Service.framework in Embed Frameworks */,
+				40F13BAD2A30A38000168E0E /* ShowDetails.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +59,7 @@
 		40F13B422A2FED3500168E0E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		40F13B442A2FED6000168E0E /* DefaultHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomePresenter.swift; sourceTree = "<group>"; };
 		40F13B4E2A2FFDDA00168E0E /* ShowCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCollectionCell.swift; sourceTree = "<group>"; };
+		40F13BAB2A30A38000168E0E /* ShowDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShowDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F667DC2A2FA76E0037CCCD /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F667DF2A2FA76E0037CCCD /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		40F667E42A2FA76E0037CCCD /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F13BAC2A30A38000168E0E /* ShowDetails.framework in Frameworks */,
 				40F668502A2FC4600037CCCD /* Service.framework in Frameworks */,
 				C2AE53B620824EE9FE6F80A9 /* libPods-Home.a in Frameworks */,
 				40F668242A2FB4D60037CCCD /* Core.framework in Frameworks */,
@@ -97,6 +100,7 @@
 		0A67E251D47A0E0C57A66737 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40F13BAB2A30A38000168E0E /* ShowDetails.framework */,
 				40F6684F2A2FC4600037CCCD /* Service.framework */,
 				40F668232A2FB4D60037CCCD /* Core.framework */,
 				A9B2F139B460CD57F4C16DB5 /* libPods-Home.a */,
@@ -231,7 +235,7 @@
 				40F667D82A2FA76E0037CCCD /* Sources */,
 				40F667D92A2FA76E0037CCCD /* Frameworks */,
 				40F667DA2A2FA76E0037CCCD /* Resources */,
-				40F668522A2FC4610037CCCD /* Embed Frameworks */,
+				40F13BAE2A30A38000168E0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -10,6 +10,7 @@ import Core
 
 protocol HomeViewDelegate: AnyObject {
     func homeView(didSearchWithText text: String)
+    func homeView(didSelectShow show: Show.ViewObject)
 }
 
 final class HomeView: UIView {
@@ -83,7 +84,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        delegate?.homeView(didSelectShow: shows[indexPath.item])
     }
 }
 

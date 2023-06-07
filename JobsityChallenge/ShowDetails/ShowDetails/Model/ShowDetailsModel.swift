@@ -1,18 +1,17 @@
 //
-//  Show.swift
-//  Home
+//  ShowDetailsModel.swift
+//  ShowDetails
 //
-//  Created by Paulo Ricardo de Araujo Vieira on 06/06/23.
+//  Created by Paulo Ricardo de Araujo Vieira on 07/06/23.
 //
 
 import UIKit
 
-struct Show {
-
+struct ShowDetails {
     struct Response: Codable {
         let id: Int
         let url: String
-        let name, type, language: String?
+        let name, type, language: String
         let genres: [String]?
         let status: String?
         let runtime, averageRuntime: Int?
@@ -21,7 +20,7 @@ struct Show {
         let schedule: Schedule?
         let rating: Rating?
         let weight: Int?
-        let network, webChannel: Network?
+        let network: Network?
         let externals: Externals?
         let image: Image?
         let summary: String?
@@ -29,21 +28,21 @@ struct Show {
         let links: Links?
 
         enum CodingKeys: String, CodingKey {
-            case id, url, name, type, language, genres, status, runtime, averageRuntime, premiered, ended, officialSite, schedule, rating, weight, network, webChannel, externals, image, summary, updated
+            case id, url, name, type, language, genres, status, runtime, averageRuntime, premiered, ended, officialSite, schedule, rating, weight, network, externals, image, summary, updated
             case links = "_links"
         }
 
         struct Externals: Codable {
-            let tvrage, thetvdb: Int?
-            let imdb: String?
+            let tvrage, thetvdb: Int
+            let imdb: String
         }
 
         struct Image: Codable {
-            let medium, original: String?
+            let medium, original: String
         }
 
         struct Links: Codable {
-            let linksSelf, previousepisode: Previousepisode?
+            let linksSelf, previousepisode: Previousepisode
 
             enum CodingKeys: String, CodingKey {
                 case linksSelf = "self"
@@ -52,38 +51,34 @@ struct Show {
         }
 
         struct Previousepisode: Codable {
-            let href: String?
+            let href: String
         }
 
         struct Network: Codable {
             let id: Int
-            let name: String?
-            let country: Country?
-            let officialSite: String?
+            let name: String
+            let country: Country
         }
 
         struct Country: Codable {
-            let name, code, timezone: String?
+            let name, code, timezone: String
         }
 
         struct Rating: Codable {
-            let average: Double?
+            let average: Double
         }
 
         struct Schedule: Codable {
-            let time: String?
-            let days: [String]?
+            let time: String
+            let days: [String]
         }
+
     }
 
     struct ViewObject {
         let name: String
-        let image: UIImageView
-        let id: Int
-    }
-
-    struct ShowSearchResponse: Codable {
-        let score: Double?
-        let show: Response
+        let daysAired: String
+        let genres: String
+        let summary: String
     }
 }

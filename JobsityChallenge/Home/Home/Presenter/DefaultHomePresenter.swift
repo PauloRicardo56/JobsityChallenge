@@ -10,8 +10,6 @@ import UIKit
 
 final class DefaultHomePresenter: HomePresenter {
 
-
-    
     weak var viewController: HomeViewDisplay?
     
     func present(shows: [Show.Response]?) {
@@ -22,7 +20,7 @@ final class DefaultHomePresenter: HomePresenter {
                     name: show.name ?? "",
                     image: UIImageView(from: show.image?.medium ?? "") {
                         self.viewController?.homeViewController(reloadShowOfId: shows?.firstIndex { $0.id == show.id } ?? 0)
-                    })
+                    }, id: show.id)
             }
 
             self.viewController?.homeViewController(displayShows: showsVO ?? [])
@@ -37,7 +35,7 @@ final class DefaultHomePresenter: HomePresenter {
                     name: show.show.name ?? "",
                     image: UIImageView(from: show.show.image?.medium ?? "") {
                         self.viewController?.homeViewController(reloadShowOfId: shows?.firstIndex { $0.show.id == show.show.id } ?? 0)
-                    })
+                    }, id: show.show.id)
             }
 
             self.viewController?.homeViewController(displayShows: showsVO ?? [])

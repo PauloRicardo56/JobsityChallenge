@@ -13,6 +13,15 @@ target 'Home' do
   home_pods
 end
 
+# ShowDetails module
+def show_details_pods
+end
+
+target 'ShowDetails' do
+  project 'ShowDetails/ShowDetails.project'
+  show_details_pods
+end
+
 # Core module
 def core_pods
 end
@@ -37,6 +46,7 @@ def application_pods
   home_pods
   core_pods
   service_pods
+  show_details_pods
 end
 
 target 'JobsityChallenge' do
