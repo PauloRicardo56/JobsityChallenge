@@ -10,15 +10,19 @@ import Service
 
 public extension UIImageView {
 
-    convenience init(from url: String) {
+    convenience init(from url: String, completion: @escaping () -> Void) {
         self.init(frame: .zero)
 
         DefaultNetworkRepository().request(url: url) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.image = UIImage(data: data)
-            default:
-                break
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    self?.image = UIImage(data: data)
+                    completion()
+                default:
+                    self?.backgroundColor = .gray
+                    break
+                }
             }
         }
     }

@@ -77,6 +77,7 @@ struct Show {
     }
 
     struct ViewObject {
+        let name: String
         let image: UIImageView
     }
 }

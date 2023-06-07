@@ -19,8 +19,10 @@ final class DefaultHomeInteractor: HomeInteractor {
 
     func fetchShows() {
         let path = "/shows"
+        let page = 1
+        let headers = ["page": String(page)]
 
-        repository?.request(endpoint: endpoint, path: path, resultObject: [Show.Response].self, completion: { [weak self] result in
+        repository?.request(endpoint: endpoint, path: path, headers: headers, resultObject: [Show.Response].self, completion: { [weak self] result in
             switch result {
             case .success(let shows):
                 self?.presenter?.present(shows: shows)
@@ -29,7 +31,7 @@ final class DefaultHomeInteractor: HomeInteractor {
             }
         })
     }
-
+    
     func downloadImage(from url: String, completion: @escaping (Data?) -> Void) {
         repository?.request(url: url, completion: { result in
             switch result {

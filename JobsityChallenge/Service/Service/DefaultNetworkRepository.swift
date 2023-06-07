@@ -9,21 +9,22 @@ public final class DefaultNetworkRepository: NetworkRepository {
 
     public init() {}
 
-    public func request<T: Codable>(endpoint: String, path: String, resultObject: T.Type, completion: @escaping (Result<T?, Error>) -> Void) {
+    public func request<T: Codable>(endpoint: String, path: String, headers: [String: String], resultObject: T.Type, completion: @escaping (Result<T?, Error>) -> Void) {
 
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = endpoint
         urlComponents.path = path
+        urlComponents.queryItems = headers.map { URLQueryItem(name: $0.key, value: $0.value) }
         let url = urlComponents.url!
 
         task(with: url, completion: completion)
     }
 
     public func request(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        let url = URL(filePath: url)
+        let url = URL(string: url)
 
-        URLSession.shared.dataTask(with: url) { data, _, err in
+        URLSession.shared.dataTask(with: url!) { data, _, err in
             if let err = err {
                 completion(.failure(err))
             }

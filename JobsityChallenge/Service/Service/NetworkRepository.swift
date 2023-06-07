@@ -10,6 +10,7 @@ public protocol NetworkRepository {
     func request<T: Codable>(
         endpoint: String,
         path: String,
+        headers: [String: String],
         resultObject: T.Type,
         completion: @escaping (Result<T?, Error>) -> Void
     )

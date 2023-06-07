@@ -9,7 +9,8 @@ import UIKit
 import Service
 
 protocol HomeViewDisplay: AnyObject {
-    func display(shows: [Show.ViewObject]?)
+    func display(shows: [Show.ViewObject])
+    func reloadShow(of id: Int)
 }
 
 final class HomeViewController: UIViewController {
@@ -28,14 +29,18 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .black
         interactor?.fetchShows()
     }
 }
 
 extension HomeViewController: HomeViewDisplay {
+    func reloadShow(of id: Int) {
+        homeView.reloadItem(with: id)
+    }
 
-    func display(shows: [Show.ViewObject]?) {
+    func display(shows: [Show.ViewObject]) {
         // Stop loading
-        // Update collection view
+        homeView.reloadCollection(with: shows)
     }
 }

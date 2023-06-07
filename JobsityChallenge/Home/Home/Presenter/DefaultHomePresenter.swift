@@ -9,15 +9,21 @@ import Core
 import UIKit
 
 final class DefaultHomePresenter: HomePresenter {
-
+    
     weak var viewController: HomeViewDisplay?
-
+    
     func present(shows: [Show.Response]?) {
+        DispatchQueue.main.async {
+            let showsVO = shows?.compactMap { show in
+                
+                Show.ViewObject(
+                    name: show.name ?? "",
+                    image: UIImageView(from: show.image?.medium ?? "") {
+                    self.viewController?.reloadShow(of: shows?.firstIndex { $0.id == show.id } ?? 0)
+                })
+            }
 
-        let showsVO = shows?.compactMap { show in
-            Show.ViewObject(image: UIImageView(from: show.image?.original ?? ""))
+            self.viewController?.display(shows: showsVO ?? [])
         }
-
-        viewController?.display(shows: showsVO)
     }
 }
