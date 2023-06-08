@@ -17,9 +17,15 @@ final class HomeViewController: UIViewController {
     var interactor: HomeInteractor?
     var coordinator: HomeCoordinator?
 
+<<<<<<< HEAD
     lazy var homeView: HomeView = { view in
         view.delegate = self
         return view
+=======
+    lazy var homeView: HomeView = {
+        $0.delegate = self
+        return $0
+>>>>>>> master
     }(HomeView())
 
     override func loadView() {
@@ -37,9 +43,12 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewDelegate {
+<<<<<<< HEAD
     func homeView(didTapHome view: HomeView) {
         interactor?.fetchShows()
     }
+=======
+>>>>>>> master
 
     func homeView(didSearchWithText text: String) {
         interactor?.searchShows(with: text)
@@ -52,6 +61,10 @@ extension HomeViewController: HomeViewDelegate {
 
 extension HomeViewController: HomeViewDisplay {
     func homeViewController(displayShows shows: [Show.ViewObject]) {
+<<<<<<< HEAD
+=======
+        // Stop loading
+>>>>>>> master
         homeView.reloadCollection(with: shows)
     }
 

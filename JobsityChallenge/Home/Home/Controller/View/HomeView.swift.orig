@@ -9,7 +9,10 @@ import UIKit
 import Core
 
 protocol HomeViewDelegate: AnyObject {
+<<<<<<< HEAD
     func homeView(didTapHome view: HomeView)
+=======
+>>>>>>> master
     func homeView(didSearchWithText text: String)
     func homeView(didSelectShow show: Show.ViewObject)
 }
@@ -19,10 +22,17 @@ final class HomeView: UIView {
     weak var delegate: HomeViewDelegate?
     private var shows: [Show.ViewObject] = []
 
+<<<<<<< HEAD
     lazy var menuView: MenuView = { view in
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+=======
+    lazy var menuView: MenuView = {
+        $0.delegate = self
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+>>>>>>> master
     }(MenuView())
 
     lazy var showsCollection: UICollectionView = {
@@ -60,10 +70,13 @@ final class HomeView: UIView {
 }
 
 extension HomeView: MenuViewDelegate {
+<<<<<<< HEAD
     func menuView(didTapHome view: MenuView) {
         delegate?.homeView(didTapHome: self)
     }
 
+=======
+>>>>>>> master
     func menuView(didSearchWithText text: String) {
         delegate?.homeView(didSearchWithText: text)
     }

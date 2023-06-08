@@ -9,7 +9,10 @@ import UIKit
 import Core
 
 protocol MenuViewDelegate: AnyObject {
+<<<<<<< HEAD
     func menuView(didTapHome view: MenuView)
+=======
+>>>>>>> master
     func menuView(didSearchWithText text: String)
 }
 
@@ -17,6 +20,7 @@ final class MenuView: UIView {
 
     weak var delegate: MenuViewDelegate?
 
+<<<<<<< HEAD
     lazy var mainStackView: UIStackView = { view in
         view.distribution = .fillEqually
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +49,35 @@ final class MenuView: UIView {
         bar.isHidden = true
         bar.translatesAutoresizingMaskIntoConstraints = false
         return bar
+=======
+    lazy var mainStackView: UIStackView = {
+        $0.distribution = .fillEqually
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UIStackView())
+
+    lazy var homeButton: UIButton = {
+        $0.setTitle("Home", for: .normal)
+        return $0
+    }(UIButton())
+
+    lazy var searchButton: UIButton = {
+        $0.setTitle("Search", for: .normal)
+        $0.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
+        return $0
+    }(UIButton())
+
+    lazy var searchBar: UISearchBar = {
+        $0.searchBarStyle = .minimal
+        $0.backgroundColor = .black
+        $0.tintColor = .white
+        $0.searchTextField.textColor = .white
+        $0.showsCancelButton = true
+        $0.delegate = self
+        $0.isHidden = true
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+>>>>>>> master
     }(UISearchBar())
 
     init() {
@@ -58,10 +91,13 @@ final class MenuView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+<<<<<<< HEAD
     @objc func didTapHome() {
         delegate?.menuView(didTapHome: self)
     }
 
+=======
+>>>>>>> master
     @objc func didTapSearch() {
         searchBar.isHidden = false
         searchBar.becomeFirstResponder()

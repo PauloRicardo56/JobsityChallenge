@@ -11,7 +11,10 @@
 		40F13B482A2FF4F900168E0E /* UIIMageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13B472A2FF4F900168E0E /* UIIMageView+DownloadImage.swift */; };
 		40F13B4A2A2FF6D200168E0E /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13B492A2FF6D200168E0E /* Service.framework */; };
 		40F13B4B2A2FF6D200168E0E /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40F13B492A2FF6D200168E0E /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+<<<<<<< HEAD
 		40F13C072A314FC200168E0E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F13C062A314FC200168E0E /* LoadingView.swift */; };
+=======
+>>>>>>> master
 		40F668112A2FB4510037CCCD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F668082A2FB4510037CCCD /* Core.framework */; };
 		40F668162A2FB4510037CCCD /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F668152A2FB4510037CCCD /* CoreTests.swift */; };
 		40F668172A2FB4510037CCCD /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F6680B2A2FB4510037CCCD /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,7 +51,10 @@
 		40F13B3F2A2FEC1B00168E0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		40F13B472A2FF4F900168E0E /* UIIMageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		40F13B492A2FF6D200168E0E /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 		40F13C062A314FC200168E0E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> master
 		40F668082A2FB4510037CCCD /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F6680B2A2FB4510037CCCD /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		40F668102A2FB4510037CCCD /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +110,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		40F13C052A314EC400168E0E /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +119,8 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> master
 		40F667FE2A2FB4510037CCCD = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +144,10 @@
 		40F6680A2A2FB4510037CCCD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				40F13C052A314EC400168E0E /* UI */,
+=======
+>>>>>>> master
 				40F13B462A2FF4E900168E0E /* Extensions */,
 				40F13B3E2A2FEC0C00168E0E /* Coordinator */,
 				40F668202A2FB4630037CCCD /* ViewCode */,
@@ -308,7 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F13B482A2FF4F900168E0E /* UIIMageView+DownloadImage.swift in Sources */,
+<<<<<<< HEAD
 				40F13C072A314FC200168E0E /* LoadingView.swift in Sources */,
+=======
+>>>>>>> master
 				40F13B402A2FEC1B00168E0E /* Coordinator.swift in Sources */,
 				40F668222A2FB46A0037CCCD /* ViewCode.swift in Sources */,
 			);
