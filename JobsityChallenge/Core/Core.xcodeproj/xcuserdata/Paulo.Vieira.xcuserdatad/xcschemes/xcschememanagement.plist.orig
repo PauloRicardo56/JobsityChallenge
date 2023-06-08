@@ -4,10 +4,14 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Service.xcscheme_^#shared#^_</key>
+		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>10</integer>
+=======
+			<integer>8</integer>
+>>>>>>> master
 		</dict>
 	</dict>
 </dict>
